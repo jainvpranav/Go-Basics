@@ -17,7 +17,7 @@ type person struct {
 
 func main() {
 	pranav := person{
-		firstName: "Pranav",
+		firstName: "pranav",
 		lastName:  "V",
 		age:       22,
 		gender:    "Male",
@@ -26,9 +26,15 @@ func main() {
 			phone: "8618994561",
 		},
 	}
+	pranav.display()
+	pranav.updateFirstName("Pranav")
+	pranav.display()
+}
 
-	pranav.lastName = "Jain"
+func (p person) display() {
+	fmt.Printf("%+v\n", p)
+}
 
-	fmt.Println(pranav)
-	fmt.Printf("%+v", pranav)
+func (pointerToPerson *person) updateFirstName(nv string) {
+	(*pointerToPerson).firstName = nv
 }
