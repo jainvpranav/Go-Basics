@@ -12,8 +12,16 @@ type spanishBot struct{}
 func main() {
 	eb := englishBot{}
 	sb := spanishBot{}
+	sq := square{sideLength: 10}
+	tri := triangle{
+		base:   5,
+		height: 10,
+	}
+	printArea(sq)
+	printArea(tri)
 	printGreeting(eb)
 	printGreeting(sb)
+	readFileFromFileName()
 }
 
 func printGreeting(b bot) {
