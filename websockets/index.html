@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Websocket</title>
+  </head>
+  <body>
+    <h2>Go Websockeet</h2>
+  </body>
+  <script>
+    let socket = new WebSocket("ws://localhost:8080/ws");
+    console.log("Attempting Connection...");
+    socket.onopen = () => {
+      socket.send("Hi, its the client");
+    };
+    socket.onclose = (event) => {
+      socket.send("Client Closed");
+    };
+    socket.onerror = (error) => {
+      console.error("Socket Error: ", error);
+    };
+  </script>
+</html>
